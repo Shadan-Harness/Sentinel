@@ -65,6 +65,7 @@
         <maven.jacoco.version>0.8.3</maven.jacoco.version>
         <maven.jar.version>3.1.0</maven.jar.version>
         <maven.pmd.version>3.8</maven.pmd.version>
+        <harnessArgLine></harnessArgLine>
     </properties>
 
     <modules>
@@ -288,6 +289,7 @@
                 <configuration>
                     <!-- CircleCI build workaround -->
                     <argLine>@{argLine} -Xms1024m -Xmx2048m</argLine>
+                    <argLine>${harnessArgLine}  @{argLine} -Xms1024m -Xmx2048m</argLine>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <useSystemClassLoader>false</useSystemClassLoader>
                 </configuration>
